@@ -1,0 +1,31 @@
+# Nómina
+smmlv = 908526
+auxi_transporte = 106454
+salario = int(input('Ingresar el Salario: '))
+bonificacion = int(input('Ingrese las bonificaciones: '))
+sueldo = salario + bonificacion
+if sueldo < 2 * smmlv:
+    total_ingreso = salario + bonificacion + auxi_transporte
+else:
+    total_ingreso = salario + bonificacion
+print('Total ingresos: ',total_ingreso)
+salud = .085 * (salario + bonificacion)
+pension = 0.12 * (salario + bonificacion)
+arl = 0.0522 * (salario + bonificacion)
+total_seg_social = salud + pension + arl
+print('Total seguridad social: ',total_seg_social)
+prima = total_ingreso * 0.0833
+cesantias = total_ingreso * 0.0833
+int_cesantias = cesantias * 0.12
+vacaciones = salario * 0.0417
+total_pres_soci = prima + cesantias +   int_cesantias + vacaciones
+print('Total prestaciones sociales: ',total_pres_soci)
+caja = 0.04 * (salario + bonificacion)
+icbf = 0.03 * (salario + bonificacion)
+sena = 0.02 * (salario + bonificacion)
+total_parafis = caja + icbf + sena
+print('Total parafiscales: ',total_parafis)
+total_deducciones = total_seg_social + total_pres_soci + total_parafis
+print('Total deducciones: ',total_deducciones)
+total_nomina = total_ingreso + total_deducciones
+print('Costo de nómina: ',total_nomina)
